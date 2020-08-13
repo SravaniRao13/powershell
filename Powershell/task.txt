@@ -1,0 +1,199 @@
+##Arithmetic Operations: Addition
+$a=15
+$b=30
+$c=$a+$b
+$c
+---------------------------------------------------
+##Subtraction
+$a=15
+$b=30
+$c=$a-$b
+$c
+---------------------------------------------------
+##multiplication
+$a=15
+$b=30
+$c=$a*$b
+$c
+---------------------------------------------------
+##Divison
+$a=15
+$b=30
+$c=$a/$b
+$c
+---------------------------------------------------
+##Mod
+$a=15
+$b=30
+$c=$a%$b
+$c
+---------------------------------------------------
+##Simple_for
+$array = @("item1", "item2", "item3")
+for($i = 0; $i -lt $array.length; $i++){ $array[$i] }
+----------------------------------------------------
+##for_each
+$array = @("item1", "item2", "item3")
+ 
+foreach ($element in $array) 
+{ $element 
+}
+----------------------------------------------------
+##simple_if
+$x = 10
+
+if($x -le 20){
+   write-host("This is if statement")
+}
+----------------------------------------------------
+##if_elseif_else
+$x = 30
+
+if($x -eq 10){
+   write-host("Value of X is 10")
+} elseif($x -eq 20){
+   write-host("Value of X is 20")
+} elseif($x -eq 30){
+   write-host("Value of X is 30")
+} else {
+   write-host("This is else statement")
+}
+---------------------------------------------------
+##if_else
+$x = 30
+
+if($x -le 20){
+   write-host("This is if statement")
+}else {
+   write-host("This is else statement")
+}
+----------------------------------------------------
+##nested_if
+$x = 30
+$y = 10
+
+if($x -eq 30){
+   if($y -eq 10) {
+      write-host("X = 30 and Y = 10")
+   }
+}   
+---------------------------------------------------
+##simple_switch
+switch(3){
+   1 {"One"}
+   2 {"Two"}
+   3 {"Three"}
+   4 {"Four"}
+   3 {"Three Again"}
+}
+----------------------------------------------------
+##switch_break
+switch(3){
+   1 {"One"}
+   2 {"Two"}
+   3 {"Three"; break }
+   4 {"Four"}
+   3 {"Three Again"}
+}
+---------------------------------------------------
+##switch_array_as_input
+switch(4,2){
+   1 {"One"}
+   2 {"Two"}
+   3 {"Three"; break }
+   4 {"Four"}
+   3 {"Three Again"}
+}
+-----------------------------------------------------
+##while
+$array = @("item1", "item2", "item3")
+$counter = 0;
+
+while($counter -lt $array.length){
+   $array[$counter]
+   $counter += 1
+   $array[0]
+}
+----------------------------------------------------
+##do_while
+$array = @("item1", "item2", "item3")
+$counter = 0;
+
+do {
+   $array[$counter]
+   $counter += 1
+} while($counter -lt $array.length)
+-------------------------------------------------------
+##function using param
+function Get-Square([int]$x)  
+ {
+ 
+ $x = Read-Host 'enter x value'
+ $res = $x * $x    
+   return $res  
+ }   
+--------------------------------------------------------
+##Array
+$myList = @(0..4)
+
+write-host("Print array")
+$myList
+--------------------------------------------------------
+##Cheatsheet
+(Get-Item C:\Users\vantaku.sravani\Desktop\powershell).LastAccessTime
+Move-Item -Path C:\Users\vantaku.sravani\Desktop\powershell -Destination Documents
+Remove-Item C:\Users\vantaku.sravani\Desktop\powershell\add.ps1
+Rename-Item -Path C:\Users\vantaku.sravani\Desktop\powershell\FibDiamond.ps1 -NewName "FiboDiamond.ps1"
+Get-Service | Where-Object {$_.Status -eq 'Running'}
+Get-ChildItem -Path C:\Users
+Get-Content -Path C:\Users\vantaku.sravani\Desktop\Powershell\KT_Notes.txt -TotalCount 5
+Get-Process | Where-Object {$KT_Notes.txt -gt 100}
+ Wait-Process -Name "notepad"
+ Get-Process | Sort-Object name -Descending | Select-Object -Index 0,1,2,3,4
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+##Exception Handling
+$uri = Read-Host 'Enter the URL'
+
+try {
+ 
+   $webResults = Invoke-WebRequest -Uri $uri -ErrorAction Stop
+
+}
+
+catch {
+ 
+   $statusCodeValue = $_.Exception.Response.StatusCode.value__
+    switch ($statusCodeValue) 
+{
+ 
+       400 {
+
+            Write-Warning -Message "HTTP Status Code 400 Bad Request. Check the URL and try again."
+        }
+
+        401 {
+ 
+           Write-Warning -Message "HTTP Status Code 401 Unauthorized."
+        }
+
+        403 {
+     
+       Write-Warning -Message "HTTP Status Code 403 Forbidden. Server may be having issues. Check the URL and try again."
+        }
+
+        404 {
+            
+       Write-Warning -Message "HTTP Status Code 404 Not found. Check the URL and try again."
+        }
+
+        500 {
+  
+          Write-Warning -Message "HTTP Status Code 500 Internal Server Error."
+        }
+
+        Default {
+
+            throw
+        }
+    }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------

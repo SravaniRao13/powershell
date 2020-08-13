@@ -1,0 +1,5 @@
+﻿<ArrayOfTextValuePair xmlns="http://svc.metrotransit.org">
+<TextValuePair><Text>BUS ROUTE</Text><value>1</value></TextValuePair>
+<TextValuePair><Text>BUS STOP NAME</Text><value>2</value></TextValuePair>
+<TextValuePair><Text>DIRECTION</Text>><value>3</value></TextValuePair>
+</ArrayOfTextValuePair>

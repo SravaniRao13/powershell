@@ -1,0 +1,80 @@
+Assignemnt - 1
+
+------------------------------------------------------
+
+--> 1 PowerShell script to perfrom all arithmetic operations, log(), sin (),cos(),tan(), squareroot. All the decimal output should have only two digits after decimal     point.
+
+--> 1 Script to catch 5 different types of exceptions. ( Try , catch , Finally ) . (i.e) Atleast 3 Try cases has to be wriiten. For each try there should be multiple     Catch statments. 
+
+--> Scripts for working with different output scenario. Explore XML files. how to handle them using PS.
+
+--> Multiple scripts to use as many as basic commands found in the cheat sheet as possible.
+
+--> 1 script to identify whether the input is Aadharcard No. or PAN Card No, Date( dd-mm-yyyy), Credit Card or I.P Address.
+
+eg. 
+Enter the input : 18-06-1994
+The input is in Date format.
+
+Enter the input : 192.168.1.1
+The input is an I.P Address
+
+Enter the input : 192.168.10.1
+The input is an I.P Address
+
+Enter the input : 4567 9807 1234
+The input is an Aadhaar Number
+
+
+
+Assignment - 2
+
+------------------------------------------------------
+
+--> Complete Assignment -1 Fully.
+
+--> Make improvements to the Fibonacci Diamond Pattern script
+
+--> Try out the APIs calling activity mentioed in Reference below.
+
+--> Write your own module and export to your partner.
+
+--> Know all the commands in both Cheat Sheets.
+
+--> Do all the exercises at the end of every chapter. ( PS_Guide.pdf)
+
+--> Open a account in GCP and Create Two New VMs for executing Remote Commands. ( Same Network Group )
+
+
+Note: 
+# Use proper comments and spacing requirements.
+# Use as minimum LOC as possible.
+# All scripts should take inputs from the User. We will test out all possible inputs and the code should be able to handle it.
+
+-------------------------
+
+Reference:
+
+PS Objects - https://docs.microsoft.com/en-us/powershell/scripting/samples/sample-scripts-for-administration?view=powershell-7 , 	    https://www.computerworld.com/article/2954261/understanding-and-using-objects-in-powershell.html
+RegEx : https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
+Variables  - https://en.wikiversity.org/wiki/PowerShell/Variables
+
+Loops      - https://www.tutorialspoint.com/powershell/powershell_for_loop.htm
+Functions - https://4sysops.com/archives/the-powershell-function-parameters-data-types-return-values/
+Array and Hastables - https://en.wikiversity.org/wiki/PowerShell/Arrays_and_Hash_Tables
+APIs: https://www.codeproject.com/Tips/794949/Query-Webservices-with-Powershell
+      https://mcpmag.com/articles/2019/04/02/parse-a-rest-api-with-powershell.aspx
+RegEX:  https://powershellexplained.com/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/#working-with-exceptions
+Modules : https://www.red-gate.com/simple-talk/sysadmin/powershell/an-introduction-to-powershell-modules/
+Custom Objects : https://www.itprotoday.com/powershell/powershell-basics-custom-objects
+Important PS Commands: https://stackify.com/powershell-commands-every-developer-should-know/ , https://devblogs.microsoft.com/scripting/table-of-basic-powershell-			commands/
+
+---> PS Remoting 
+#https://4sysops.com/wiki/enable-powershell-remoting/
+# Cheat Sheet - https://blog.netspi.com/powershell-remoting-cheatsheet/
+# https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7
+# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7
+# Remote Variables - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_variables?view=powershell-7
+
+
+

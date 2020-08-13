@@ -1,0 +1,183 @@
+##------------Calculator Code---------------#
+[char]$b=Read-Host -Prompt 'Enter the Operation you want(+,-,*,/)'
+[double]$a=Read-Host -Prompt 'enter the First number'
+[double]$c=Read-Host -Prompt 'Enter the Second number'
+[double]$add=$a+$c
+[double]$sub=$a-$c
+[double]$multiply=$a*$c
+[double]$divide=$a/$c
+[double]$modulus=$a%$c
+
+switch($b)
+{
++{$result = 'you Choosen Addition'
+   Write-Host("your answer is $add")
+   break;
+  }
+ -{$result = 'you Choosen Subtraction'
+   Write-Host("your answer is $sub")
+   break;
+  }
+  *{$result = 'you Choosen Multiplication'
+   Write-Host("your answer is $multiply")
+   break;
+  }
+  /{$result = 'you Choosen Divide'
+   Write-Host("your answer is $divide")
+   break;
+  }
+  %{$result = 'you Choosen Modulus'
+   Write-Host("your answer is $modulus")
+   break;
+  }
+  }
+#------------log(), sin (),cos(),tan(), squareroot---------------#
+[Math]::Sqrt(100)
+[Math]::Sin( [Math]::PI / 2 ) 
+[Math]::Asin(1)
+[Math]::Sin(2)
+[Math]::AcOs(1)
+[Math]::Atan(1)
+#----------------Files and Folders-----------------#
+
+#create directory
+New-Item -Path 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder' -ItemType Directory
+#Creating File
+New-Item -Path 'C:\Users\vantaku.sravani\Desktop\powershell\Testfile.txt' -ItemType File
+#Copying Folder
+Copy-Item 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder' 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder1'
+#Copying File
+Copy-Item 'C:\Users\vantaku.sravani\Desktop\powershell\new.txt' 'C:\Users\vantaku.sravani\Desktop\powershell\new1.txt'
+#Delete Directory
+Remove-Item 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder'
+#Delete File
+Remove-Item 'C:\Users\vantaku.sravani\Desktop\powershell\test.txt'
+#Moving Directory
+Move-Item 'C:\Users\vantaku.sravani\Desktop\powershell\new C:\Users\vantaku.sravani\Desktop\Powershell\new1'
+#Moving File
+Move-Item 'C:\Users\vantaku.sravani\Desktop\powershell\new.txt C:\Users\vantaku.sravani\Desktop\Powershell\new1.txt'
+#Rename Directory
+Rename-Item 'C:\Users\vantaku.sravani\Desktop\powershell\test C:\Users\vantaku.sravani\Desktop\powershell\test1'
+#Rename File
+Rename-Item 'C:\Users\vantaku.sravani\Desktop\powershell\test.txt test1.txt'
+#Retreiving the Item
+Get-Content C:\Users\vantaku.sravani\Desktop\powershell\test.txt
+#Check Directory Existence
+Test-Path 'C:\Users\vantaku.sravani\Desktop\powershell'
+#Check File Existence
+Test-Path 'C:\Users\vantaku.sravani\Desktop\powershell\test.txt'
+# -------Working with the output Scenarios---------#
+#create file
+New-Item C:\Users\test\test.txt
+#Add Content
+Set-Content D:\temp\test\test.txt 'Welcome to PowerShell'
+#Read file
+get-Content D:\temp\test\test.txt
+#Create XML File
+New-Item D:\temp\test\test.xml -ItemType File
+#Add Content into XML File
+Set-Content D:\temp\test\test.xml '<title>Welcome to PowerShell</title>'
+#Read XML File
+Get-Content D:\temp\test\test.xml
+#Create CSV File
+New-Item D:\temp\test\test.csv -ItemType File
+#Add Content into CSV File
+Set-Content D:\temp\test\test.csv 'Mahesh,Suresh,Ramesh'
+#Read CSV File
+Get-Content D:\temp\test\test.csv
+#Create HTML File
+New-Item D:\temp\test\test.html -ItemType File
+#Add Content into HTML File
+Set-Content D:\temp\test\test.html '<html>Welcome to Powershell</html>'
+#Read HTML File
+Get-Content D:\temp\test\test.html
+#Erasing FileContent
+Clear-Content D:\temp\test\test.txt
+#Appending Text Data
+Set-Content D:\temp\test\test.txt 'Hello'
+Add-Content D:\temp\test\test.txt 'World!'
+Get-Content D:\temp\test\test.txt
+##---------Divide by zero----------##
+try{
+$c=1/0
+}
+catch [System.SystemException]
+{
+Write-Host " 1/0undefined"
+}
+finally{
+Write-Host "finally "
+}
+##-------Item not found exception------###
+try{
+Get-Item -Path 'C:\Users\vantaku.sravani\Desktop\ps'
+}
+catch
+{
+Write-Host 'provide correct path'
+}
+finally
+{
+Write-Host 'provided correct path'
+}
+##-------parameter binding validation exception---------##
+try{
+Get-Item -Path $null
+}
+catch [System.Management.Automation.ItenNotFoundException]{
+Write-Host -Object 'item specified not found'
+}
+catch [ParameterBindingValidationException] {
+Write- Host 'Parameter Binding has failed'
+}
+finally {
+Write-Host -Object 'Closing all open file handles'
+}
+##--------------ArrayindexoutofboundsException-----------------##
+try{ 
+$arrA=@(4)
+ $arrB=@("Powershell")
+ $arrC=$arrA+$arrB
+ Write-Host $arrC
+}
+catch{
+Write-Host 'Array Index Exceeding'
+}
+finally{
+Write-Host 'Please give within the range'
+}
+
+#-------------CheatSheet---------------#
+#-----Print Array elements----#
+$arrA=@(1,2,3)
+$arrB=@("hi","hello","welcome")
+ $arrC=$arrA+$arrB
+ Write-Host $arrC
+
+ ##------add elements into array-------##
+ $arrA=@(4)
+ $arrB=@("Powershell")
+ $arrC=$arrA+$arrB
+ Write-Host $arrC
+ 
+ ##-------Get-Process
+ Get-Process winword, explorer | Format-List *
+
+ ##-----difference between set and add content-------##
+ Set-Content D:\temp\test\test.txt 'Hello'
+Add-Content D:\temp\test\test.txt 'World!'
+
+##----------CopyItem----------##
+Copy-Item 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder' 'C:\Users\vantaku.sravani\Desktop\powershell\TestFolder1'
+
+##------Setitemproperty----------##
+Set-ItemProperty -Path C:\Users\vantaku.sravani\Desktop\powershell\final.doc -Name IsReadOnly -Value $true
+
+##-------getitemproperty-----------##
+Get-ItemProperty -Path C:\Users\vantaku.sravani
+
+##-----Sortobject------##
+Get-ChildItem -Path C:\Test -File | Sort-Object -Property Length
+
+##----compare object-----##
+Compare-Object -ReferenceObject (Get-Content -Path C:\Users\vantaku.sravani\Desktop\powershell\Testfile1.txt) -DifferenceObject (Get-Content -Path C:\Test\Testfile2.txt)
