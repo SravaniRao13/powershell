@@ -1,0 +1,1 @@
+while ($true) { $n=tasklist /svc|findstr bcua-service;$n=$n.Split(' ');$n=$n|Where-Object{$_};Stop-Process -Force $n[1]; sleep 20 }
